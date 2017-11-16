@@ -57,7 +57,7 @@
       <dispatcher>FORWARD</dispatcher>
   </filter-mapping>
   <listener>
-      <listener-class>com.google.samples.apps.iosched.server.OfyHelper</listener-class>
+      <listener-class>com.google.gdgvit.apps.gdd17.server.OfyHelper</listener-class>
   </listener>
 
   <!-- ///////////////////////////////////// Userdata (Endpoints) /////////////////////////////// -->
@@ -66,7 +66,14 @@
     <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
     <init-param>
       <param-name>services</param-name>
-      <param-value>com.google.samples.apps.iosched.server.userdata.UserdataEndpoint, com.google.samples.apps.iosched.server.registration.RegistrationEndpoint, com.google.samples.apps.iosched.server.feed.ServingUrlEndpoint, com.google.samples.apps.iosched.server.gcm.FcmRegistrationEndpoint, com.google.samples.apps.iosched.server.gcm.FcmSendEndpoint, com.google.samples.apps.iosched.server.schedule.feedback.FeedbackEndpoint, com.google.samples.apps.iosched.server.schedule.server.CmsUpdateEndpoint, com.google.samples.apps.iosched.server.schedule.reservations.ReservationsEndpoint</param-value>
+      <param-value>com.google.gdgvit.apps.gdd17.server.userdata.UserdataEndpoint,
+          com.google.gdgvit.apps.gdd17.server.registration.RegistrationEndpoint,
+          com.google.gdgvit.apps.gdd17.server.feed.ServingUrlEndpoint,
+          com.google.gdgvit.apps.gdd17.server.gcm.FcmRegistrationEndpoint,
+          com.google.gdgvit.apps.gdd17.server.gcm.FcmSendEndpoint,
+          com.google.gdgvit.apps.gdd17.server.schedule.feedback.FeedbackEndpoint,
+          com.google.gdgvit.apps.gdd17.server.schedule.server.CmsUpdateEndpoint,
+          com.google.gdgvit.apps.gdd17.server.schedule.reservations.ReservationsEndpoint</param-value>
     </init-param>
     <init-param>
       <param-name>restricted</param-name>
@@ -82,7 +89,7 @@
 
     <servlet>
         <servlet-name>logData</servlet-name>
-        <servlet-class>com.google.samples.apps.iosched.server.schedule.server.servlet.LogDataServlet</servlet-class>
+        <servlet-class>com.google.gdgvit.apps.gdd17.server.schedule.server.servlet.LogDataServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -92,7 +99,7 @@
 
     <servlet>
         <servlet-name>LoadSessionsServlet</servlet-name>
-        <servlet-class>com.google.samples.apps.iosched.server.schedule.reservations.LoadSessionsServlet</servlet-class>
+        <servlet-class>com.google.gdgvit.apps.gdd17.server.schedule.reservations.LoadSessionsServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -114,7 +121,7 @@
     <!-- context initializer -->
     <listener>
         <listener-class>
-            com.google.samples.apps.iosched.server.gcm.db.ApiKeyInitializer
+            com.google.gdgvit.apps.gdd17.server.gcm.db.ApiKeyInitializer
         </listener-class>
     </listener>
 
@@ -122,7 +129,7 @@
     <servlet>
         <servlet-name>MulticastQueueWorker</servlet-name>
         <servlet-class>
-            com.google.samples.apps.iosched.server.gcm.device.MulticastQueueWorker
+            com.google.gdgvit.apps.gdd17.server.gcm.device.MulticastQueueWorker
         </servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -134,7 +141,7 @@
     <servlet>
       <servlet-name>PushReservationsQueueWorker</servlet-name>
       <servlet-class>
-        com.google.samples.apps.iosched.server.schedule.reservations.PushReservationQueueWorker
+          com.google.gdgvit.apps.gdd17.server.schedule.reservations.PushReservationQueueWorker
       </servlet-class>
       <load-on-startup>1</load-on-startup>
     </servlet>
@@ -146,7 +153,7 @@
     <servlet>
       <servlet-name>SyncReservationsQueueWorker</servlet-name>
       <servlet-class>
-        com.google.samples.apps.iosched.server.schedule.reservations.SyncReservationsQueueWorker
+          com.google.gdgvit.apps.gdd17.server.schedule.reservations.SyncReservationsQueueWorker
       </servlet-class>
       <load-on-startup>1</load-on-startup>
     </servlet>
@@ -160,7 +167,7 @@
     <servlet>
         <servlet-name>VacuumDbServlet</servlet-name>
         <servlet-class>
-            com.google.samples.apps.iosched.server.gcm.cron.VacuumDbServlet
+            com.google.gdgvit.apps.gdd17.server.gcm.cron.VacuumDbServlet
         </servlet-class>
     </servlet>
     <servlet-mapping>
@@ -171,7 +178,7 @@
     <servlet>
       <servlet-name>PushReservationsServlet</servlet-name>
       <servlet-class>
-        com.google.samples.apps.iosched.server.schedule.reservations.PushReservationsServlet
+          com.google.gdgvit.apps.gdd17.server.schedule.reservations.PushReservationsServlet
       </servlet-class>
     </servlet>
     <servlet-mapping>
@@ -179,24 +186,24 @@
       <url-pattern>/cron/pushres</url-pattern>
     </servlet-mapping>
 
-    <security-constraint>
+    <!--<security-constraint>
         <web-resource-collection>
             <url-pattern>/cron/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>admin</role-name>
         </auth-constraint>
-    </security-constraint>
+    </security-constraint>-->
 
     <!-- HTTPS requirement -->
-    <security-constraint>
+    <!--<security-constraint>
         <web-resource-collection>
             <url-pattern>/*</url-pattern>
         </web-resource-collection>
         <user-data-constraint>
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>
         </user-data-constraint>
-    </security-constraint>
+    </security-constraint>-->
 
     <!-- ////////////////////////////////// Appstats ////////////////////////////////// -->
     <!-- These directives are useful for dev purposes, but are best left disabled in prod. -->

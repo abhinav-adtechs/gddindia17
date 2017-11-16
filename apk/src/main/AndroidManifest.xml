@@ -14,13 +14,13 @@
   See the License for the specific language governing permissions and
   limitations under the License.
   -->
-<manifest package="com.google.samples.apps.iosched"
+<manifest package="com.google.gdgvit.apps.gdd17"
           xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           android:installLocation="auto">
 
     <application
-        android:name="com.google.samples.apps.iosched.AppApplication"
+        android:name="com.google.gdgvit.apps.gdd17.AppApplication"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -51,7 +51,7 @@
 
         <!-- Activities -->
         <activity
-            android:name="com.google.samples.apps.iosched.schedule.ScheduleActivity"
+            android:name="com.google.gdgvit.apps.gdd17.schedule.ScheduleActivity"
             android:exported="true"
             android:label="@string/title_schedule"
             android:launchMode="singleTop"
@@ -96,34 +96,34 @@
         </activity>
 
         <activity
-            android:name="com.google.samples.apps.iosched.myio.MyIOActivity"
+            android:name="com.google.gdgvit.apps.gdd17.myio.MyIOActivity"
             android:exported="false"
             android:label="@string/title_my_io"
             android:launchMode="singleTop"
             android:theme="@style/Theme.IOSched.MyIo" />
 
         <activity
-            android:name="com.google.samples.apps.iosched.feed.FeedActivity"
+            android:name="com.google.gdgvit.apps.gdd17.feed.FeedActivity"
             android:exported="false"
             android:label="@string/title_feed"
             android:launchMode="singleTop"
             android:theme="@style/Theme.IOSched.Feed" />
 
         <activity
-            android:name="com.google.samples.apps.iosched.info.InfoActivity"
+            android:name="com.google.gdgvit.apps.gdd17.info.InfoActivity"
             android:exported="false"
             android:label="@string/title_info"
             android:launchMode="singleTop"
             android:theme="@style/Theme.IOSched.Info" />
 
         <activity
-            android:name="com.google.samples.apps.iosched.settings.SettingsActivity"
+            android:name="com.google.gdgvit.apps.gdd17.settings.SettingsActivity"
             android:exported="false"
             android:label="@string/title_settings"
             android:parentActivityName=".myio.MyIOActivity" />
 
         <activity
-            android:name="com.google.samples.apps.iosched.ui.SearchActivity"
+            android:name="com.google.gdgvit.apps.gdd17.ui.SearchActivity"
             android:exported="false"
             android:label="@string/title_search"
             android:launchMode="singleTop"
@@ -142,7 +142,7 @@
         </activity>
 
         <activity
-            android:name="com.google.samples.apps.iosched.feedback.SessionFeedbackActivity"
+            android:name="com.google.gdgvit.apps.gdd17.feedback.SessionFeedbackActivity"
             android:exported="false"
             android:label="@string/title_session_feedback"
             android:theme="@style/Theme.IOSched.Feedback"
@@ -155,12 +155,12 @@
         </activity>
 
         <activity
-            android:name="com.google.samples.apps.iosched.welcome.WelcomeActivity"
+            android:name="com.google.gdgvit.apps.gdd17.welcome.WelcomeActivity"
             android:exported="false"
             android:theme="@style/Theme.IOSched.Welcome" />
 
         <activity
-            android:name="com.google.samples.apps.iosched.session.SessionDetailActivity"
+            android:name="com.google.gdgvit.apps.gdd17.session.SessionDetailActivity"
             android:exported="true"
             android:label="@string/title_session_detail"
             android:theme="@style/Theme.IOSched.SessionDetails">
@@ -186,7 +186,7 @@
         </activity>
 
         <activity
-            android:name="com.google.samples.apps.iosched.map.MapActivity"
+            android:name="com.google.gdgvit.apps.gdd17.map.MapActivity"
             android:exported="true"
             android:label="@string/title_map"
             android:theme="@style/Theme.IOSched.Map"
@@ -195,11 +195,11 @@
         <!-- TaskStackBuilder proxy activity for widgets and notifications. -->
 
         <activity
-            android:name="com.google.samples.apps.iosched.ui.TaskStackBuilderProxyActivity"
+            android:name="com.google.gdgvit.apps.gdd17.ui.TaskStackBuilderProxyActivity"
             android:exported="false"
             android:theme="@android:style/Theme.NoDisplay" />
         <activity
-            android:name="com.google.samples.apps.iosched.debug.DebugActivity"
+            android:name="com.google.gdgvit.apps.gdd17.debug.DebugActivity"
             android:exported="false"
             android:label="@string/title_activity_debug_test_runner"
             android:parentActivityName=".myio.MyIOActivity" />
@@ -218,18 +218,18 @@
         </activity-alias>
 
         <!-- Session alarm/calendar integrating components. -->
-        <receiver android:name="com.google.samples.apps.iosched.receiver.SessionAlarmReceiver">
+        <receiver android:name="com.google.gdgvit.apps.gdd17.receiver.SessionAlarmReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="com.google.samples.apps.iosched.action.UPDATE_CALENDAR_COMPLETED" />
+                <action android:name="com.google.gdgvit.apps.gdd17.action.UPDATE_CALENDAR_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name="com.google.samples.apps.iosched.service.SessionAlarmService"
+            android:name="com.google.gdgvit.apps.gdd17.service.SessionAlarmService"
             android:exported="false" />
         <service
-            android:name="com.google.samples.apps.iosched.service.SessionCalendarService"
+            android:name="com.google.gdgvit.apps.gdd17.service.SessionCalendarService"
             android:exported="false" />
 
         <service
@@ -278,7 +278,7 @@
           where we handle FCM messages.
         -->
         <service
-            android:name="com.google.samples.apps.iosched.fcm.MyFcmListenerService"
+            android:name="com.google.gdgvit.apps.gdd17.fcm.MyFcmListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -286,7 +286,7 @@
         </service>
 
         <service
-            android:name="com.google.samples.apps.iosched.fcm.MyInstanceIDService"
+            android:name="com.google.gdgvit.apps.gdd17.fcm.MyInstanceIDService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
@@ -296,7 +296,7 @@
         <!-- Data, sync and schedule editing components -->
 
         <provider
-            android:name="com.google.samples.apps.iosched.provider.ScheduleProvider"
+            android:name="com.google.gdgvit.apps.gdd17.provider.ScheduleProvider"
             android:authorities="com.google.samples.apps.iosched"
             android:exported="true"
             android:label="@string/app_name"
@@ -304,7 +304,7 @@
             android:writePermission="com.google.samples.apps.iosched.permission.WRITE_SCHEDULE" />
 
         <service
-            android:name="com.google.samples.apps.iosched.sync.SyncService"
+            android:name="com.google.gdgvit.apps.gdd17.sync.SyncService"
             android:exported="true"
             tools:ignore="ExportedService">
             <intent-filter>
@@ -320,14 +320,14 @@
             data such as session, speakers, etc. This data is used prior to the app's
             first sync to the backend server. -->
         <service
-            android:name="com.google.samples.apps.iosched.service.DataBootstrapService"
+            android:name="com.google.gdgvit.apps.gdd17.service.DataBootstrapService"
             android:exported="false" />
 
         <!--
              a simple receiver that triggers a sync for any message it receives. used by our
              GCM implementation
         -->
-        <receiver android:name="com.google.samples.apps.iosched.sync.TriggerSyncReceiver" />
+        <receiver android:name="com.google.gdgvit.apps.gdd17.sync.TriggerSyncReceiver" />
 
         <!-- Other manifest items -->
 
@@ -338,7 +338,7 @@
         <!-- App widget components -->
 
         <receiver
-            android:name="com.google.samples.apps.iosched.appwidget.ScheduleWidgetProvider"
+            android:name="com.google.gdgvit.apps.gdd17.appwidget.ScheduleWidgetProvider"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -352,14 +352,14 @@
         <!-- The service serving the RemoteViews to the collection widget -->
 
         <service
-            android:name="com.google.samples.apps.iosched.appwidget.ScheduleWidgetRemoteViewsService"
+            android:name="com.google.gdgvit.apps.gdd17.appwidget.ScheduleWidgetRemoteViewsService"
             android:enabled="true"
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <!-- Account authenticator service for use with sync adapter -->
         <service
-            android:name="com.google.samples.apps.iosched.sync.account.AuthenticatorService"
+            android:name="com.google.gdgvit.apps.gdd17.sync.account.AuthenticatorService"
             tools:ignore="ExportedService">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
@@ -371,7 +371,7 @@
 
         <!-- Intent Service for post sign in activities -->
         <service
-            android:name="com.google.samples.apps.iosched.signin.PostSignInUpgradeService" />
+            android:name="com.google.gdgvit.apps.gdd17.signin.PostSignInUpgradeService" />
 
     </application>
 </manifest>
